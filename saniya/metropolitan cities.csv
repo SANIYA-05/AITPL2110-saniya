@@ -1,13 +1,13 @@
-s.no,city,state,longitude,latitude
-1,New Delhi,Delhi,28°37?N,77°13?E
-2,Mumbai (Bombay),Maharashtra,18°59?N,72°50?E
-3,Kolkata (Calcutta),West Bengal,22°34?N,88°22?E
-4,Chennai (Madras),Tamil Nadu,13°05?N,80°16?E
-5,Bangalore,Karnataka,12°58?N,77°34?E
-6,Ahmedabad,Gujarat,23°02?N,72°35?E
-7,Pune,Maharashtra,18°31?N,73°51?E
-8,Visakhapatnam,Andhra Pradesh,17°41?N,83°13?E
-9,Surat,Gujarat,21°10?N,72°50?E
-10,Jaipur,Rajasthan,26°56?N,75°49?E
-11,Nagpur,Maharashtra,21°08?N,79°05?E
-11,Hyderabad,Andhra Pradesh,17°22?N,78°29?E
+s.no,cityname,lon,lat,color
+1,New Delhi,28.37 ,77.13,pink
+2,Mumbai,18.59,72.50,white
+3,Kolkata,22.34,88.22,green
+4,Chennai,13.05,80.16,orange
+5,Bangalore,12.58,77.34,red
+6,Ahmedabad,23.02,72.35,pink
+7,Pune,18.31,73.51,green
+8,Visakhapatnam,17.41,83.13,white
+9,Surat,21.10,72.50,green
+10,Jaipur,26.56,75.49,pink
+11,Nagpur,21.08,79.05,red
+12,Hyderabad,17.22,78.29,orange
