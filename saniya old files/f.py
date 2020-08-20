@@ -1,0 +1,23 @@
+import sqlite3
+con=sqlite3.connect('db4.db')
+c=con.cursor()
+sql=('create table if not exists employee(empid integer primary key autoincrement,name text,salary number)')
+c.execute(sql)
+sql=('insert into employee(name,salary) values ("nazu",9492)')
+c.execute(sql)
+sql1=('create table if not exists contacts(contactid integer primary key autoincrement,name text,contactnum number)')
+c.execute(sql)
+con.commit()
+c.execute('select * from employee')
+rows=c.fetchall()
+for row in rows:
+    print(row)
+sql1=('insert into contacts(name,contactnum) values ("nazu",9492855468)')
+c.execute(sql1)
+con.commit()
+c.execute('select * from contacts')
+rows1=c.fetchall()
+for row1 in rows1:
+    print(row1)
+c.close()
+con.close()
