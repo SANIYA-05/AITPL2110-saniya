@@ -17,35 +17,7 @@ def newfile():
     a.title("untitled-Notepad") #new file before saving automatically generates title like this
     file=None
     TextArea.delete(1.0,END)#firstline 0th char to last char it erases and new file creates
-def openfile():
-    global file
-    file=askopenfilename(defaultextension=".txt",filetypes=[("All Files","*.*"),("Text Documents","*.text")]) #saves the file with the extention.txt
-    if file== "": #if file is null
-        file=None
-    else:
-        a.title(os.path.basename(file) + "-Notepad") #to add file name with proper extension
-        TextArea.delete(1.0,END)
-        f=open(file,"r")
-        TextArea.insert(1.0,f.read())
-        f.close()
-def savefile():
-    global file
-    if file==None:
-        file=asksaveasfilename(initialfile='Untitled.txt',defaultextension=".txt",filetypes=[("All Files","*.*"),("Text Documents","*.text")])
-        if file=="": #if file is null
-            file=None
-        else:
-            #saving new file
-            f=open(file,"w")
-            f.write(TextArea.get(1.0,END))
-            f.close()
-            a.title(os.path.basename(file)+"Notepad") #so the filename gets updated
-            print("file saved") #to cross check wheather file is saved or not
-    else:
-        #simply sve file
-        f = open(file, "w")
-        f.write(TextArea.get(1.0, END))
-        f.close()
+
 a=Tk()
 a.title("Untitled-Notepad")
 a.geometry("500x500+100+100")
@@ -59,9 +31,9 @@ m1=Menu()
 l1=Menu()
 l1.add_command(label="New",command=newfile)
 l1.add_command(label="NewWindow")
-l1.add_command(label="Open",command=openfile)
+l1.add_command(label="Open")
 l1.add_command(label="Save")
-l1.add_command(label="Save As",command=savefile)
+l1.add_command(label="Save As")
 l1.add_separator()
 l1.add_command(label="PageSetup")
 l1.add_command(label="Print")
@@ -110,9 +82,6 @@ m1.add_cascade(label="Edit",menu=l2)
 m1.add_cascade(label="Format",menu=l3)
 m1.add_cascade(label="View",menu=l4)
 m1.add_cascade(label="Help",menu=l5)
-#to locate scroll bar
-#scroll=Scrollbar(TextArea).pack(side=RIGHT,fill=Y) #it comes to the right side along y axis
-#scroll.config(command=TextArea.yview)
-#TextArea.config(yscrollcommand=scroll.set)
+
 a.config(menu=m1)
 a.mainloop()
